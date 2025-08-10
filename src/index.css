@@ -13,6 +13,11 @@ body {
   font-family: "Sansation", sans-serif;
 }
 
+img {
+  border: 1px solid var(--mimi-pink);
+  box-shadow: 0 0 25px var(--mimi-pink);
+  background-color: rgba(252, 211, 222, 0.4);
+}
 .mimi-pink-text {
   color: #fcd3de;
 }

@@ -3,6 +3,8 @@ import Nav from "./Nav";
 import LandingPage from "./LandingPage";
 import Projects from "./Projects";
 import AboutMe from "./AboutMe";
+import Contact from "./Contact"
+import Spacer from "./Spacer"
 
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
       <Nav />
       <main>
         <LandingPage />
+        <Spacer/>
         <Projects />
         <AboutMe />
+        <Contact/>
       </main>
     </>
   );

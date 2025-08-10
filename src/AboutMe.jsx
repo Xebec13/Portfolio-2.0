@@ -1,6 +1,6 @@
 const AboutMe = () => {
   return (
-    <div className="h-screen">AboutMe</div>
+    <section className="h-screen border border-indigo-700">AboutMe</section>
   )
 }
 

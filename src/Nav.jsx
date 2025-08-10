@@ -1,7 +1,7 @@
 const Nav = () => {
   return (
-    <nav className="sticky grid top-0 p-5 w-full h-[10vh] z-10">
-      <div className="test"></div>
+    <nav className="mimi-pink-text font-extrabold uppercase sticky grid top-0 p-5 h-[10vh] rounded-full shadow-2xl z-10">
+      <div className="w-full h-full absolute backdrop-blur-xl -z-10"></div>
       <ul className="flex justify-end items-center gap-5">
         <li>Projects</li>
         <li>About Me</li>

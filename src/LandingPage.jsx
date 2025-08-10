@@ -1,26 +1,35 @@
 import profilePhoto from "./assets/portfolio-av1.png";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+//Hooks
+import useFadeIn from "./hooks/useFadeIn"
 
-gsap.registerPlugin(useGSAP);
 
 const LandingPage = () => {
+    const fadeInRef = useFadeIn("p", { y: 60, duration: 1.6, stagger: 0.5 });
+
   return (
-    <section className="mimi-pink-text flex justify-center items-center h-[90vh] p-25 gap-4">
-      <div className="w-3/4 h-1/2 flex items-start justify-center flex-col">
-        <p className="text-5xl">Hello I'm David</p>
-        <p className="text-2xl">Front-End Developer</p>
-        <p className="text-s">
-          I build fast, responsive, visually sharp. Always in search of beauty
-          in code, I sail beyond the basics
-        </p>
+    <section
+      ref={fadeInRef}
+      className="h-[90vh] p-10 md:p-25 mimi-pink-text grid md:grid-cols-2 place-items-center"
+    >
+      <div className="text-center md:text-left space-y-3">
+        <div className="font-semibold ">
+          <p className="text-[3rem] md:text-[4rem]">
+            Hello, <span className="whitespace-nowrap">I'm David</span>
+          </p>
+          <p className="text-[1.5rem] md:text-[2rem]">Front-End Developer</p>
+        </div>
+        <div className="text-[0.8rem] md:text-[1rem]">
+          <p>I build fast, responsive, visually sharp.</p>
+          <p>Always in search of beauty in code, I sail beyond the basics</p>
+        </div>
       </div>
-      <div className="size-[300px]">
+      <div className="size-[200px] md:size-[300px]">
         <img
           src={profilePhoto}
           alt="profile-photo"
-          height={"250px"}
-          width={"250px"}
+          height={"300px"}
+          width={"300px"}
+          loading="eager"
           className="w-full h-full object-cover rounded-full"
         />
       </div>
