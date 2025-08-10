@@ -1,0 +1,7 @@
+const AboutMe = () => {
+  return (
+    <div className="h-screen">AboutMe</div>
+  )
+}
+
+export default AboutMe

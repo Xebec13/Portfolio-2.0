@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 :root {
-  --ultra-violet: #4c4382ff;
-  --pomp-and-power: #926ea5ff;
-  --mimi-pink: #fcd3deff;
-  --amaranth-pink: #e3a2c4ff;
-  --sky-magenta: #c970aaff;
+  --ultra-violet: rgb(76, 67, 130);
+  --pomp-and-power: rgb(146, 110, 165);
+  --mimi-pink: rgb(252, 211, 222);
+  --amaranth-pink: rgb(227, 162, 196);
+  --sky-magenta: rgb(201, 112, 170);
 }
 
 body {
@@ -15,4 +15,23 @@ body {
 
 .mimi-pink-text {
   color: #fcd3de;
+}
+.ultra-violet {
+  background-color: rgba(76, 67, 130, 1);
+}
+
+.pomp-and-power {
+  background-color: rgba(146, 110, 165, 1);
+}
+
+.mimi-pink {
+  background-color: rgba(252, 211, 222, 1);
+}
+
+.amaranth-pink {
+  background-color: rgba(227, 162, 196, 1);
+}
+
+.sky-magenta {
+  background-color: rgba(201, 112, 170, 1);
 }
