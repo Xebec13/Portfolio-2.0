@@ -83,11 +83,11 @@
 
     width: var(--circle-size);
     height: var(--circle-size);
-    top: calc(50% - var(--circle-size) / 2);
+    top: calc(100% - var(--circle-size) / 2);
     left: calc(50% - var(--circle-size) / 2);
 
     transform-origin: center center;
-    animation: moveVertical 30s ease infinite;
+    animation: moveHorizontal 30s ease infinite;
 
     opacity: 1;
   }
