@@ -9,7 +9,7 @@ import gsap from "gsap";
  * @param {function} onComplete - Callback to run after animation completes.
  * @returns {object} ref - Attach to container element.
  */
-const useFadeIn = (selector = "p", options = {}, onComplete) => {
+const useFadeIn = (selector = ".FadeIn", options = {}, onComplete) => {
   const containerRef = useRef(null);
 
   useGSAP(() => {

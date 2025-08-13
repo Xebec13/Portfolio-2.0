@@ -21,6 +21,7 @@ img {
 .mimi-pink-text {
   color: #fcd3de;
 }
+
 .ultra-violet {
   background-color: rgba(76, 67, 130, 1);
 }
@@ -28,7 +29,12 @@ img {
 .pomp-and-power {
   background-color: rgba(146, 110, 165, 1);
 }
-
+.pomp-and-power-50 {
+  background-color: rgba(146, 110, 165, 0.5);
+}
+.pomp-and-power-40 {
+  background-color: rgba(146, 110, 165, 0.35);
+}
 .mimi-pink {
   background-color: rgba(252, 211, 222, 1);
 }
@@ -40,3 +46,5 @@ img {
 .sky-magenta {
   background-color: rgba(201, 112, 170, 1);
 }
+
+

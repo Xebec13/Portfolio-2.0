@@ -2,7 +2,7 @@ import Background from "./Background/Background"
 import Nav from "./Nav";
 import LandingPage from "./LandingPage";
 import Projects from "./Projects";
-import AboutMe from "./AboutMe";
+
 import Contact from "./Contact"
 import Spacer from "./Spacer"
 
@@ -16,7 +16,7 @@ function App() {
         <LandingPage />
         <Spacer/>
         <Projects />
-        <AboutMe />
+        <Spacer/>
         <Contact/>
       </main>
     </>

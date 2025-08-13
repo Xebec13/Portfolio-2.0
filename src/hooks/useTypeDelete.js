@@ -9,14 +9,13 @@ gsap.registerPlugin(ScrambleTextPlugin);
  * Hook for type/delete animation. Returns ref and start function.
  * @returns {[ref, start]} tuple
  */
-const useTypeDelete = () => {
+const useTypeDelete = (texts = ["Xebec13", "David"]) => {
   const textRef = useRef(null);
   const timelineRef = useRef(null);
 
   const start = useCallback(() => {
     if (!textRef.current) return;
 
-    // Kill any existing timeline
     if (timelineRef.current) {
       timelineRef.current.kill();
     }
@@ -24,23 +23,25 @@ const useTypeDelete = () => {
     const tl = gsap.timeline({
       repeat: -1,
       repeatDelay: 2,
-      defaults: { duration: 2, ease: "none" },
+      defaults: { ease: "none" },
     });
 
-    tl.to(textRef.current, { duration: 1.5, scrambleText: { text: "Xebec13", tweenLength: false } })
-      .to(textRef.current, { duration: 1.5, scrambleText: { text: "David", tweenLength: false } }, "+=2");
+    texts.forEach((text, index) => {
+      tl.to(textRef.current, {
+        duration: 1.5,
+        scrambleText: { text, tweenLength: false }
+      }, index === 0 ? undefined : "+=2");
+    });
 
     timelineRef.current = tl;
-  }, []);
+  }, [texts]);
 
-  // Clean up on unmount
-  useGSAP(() => {
-    return () => {
-      if (timelineRef.current) timelineRef.current.kill();
-    };
+  useGSAP(() => () => {
+    if (timelineRef.current) timelineRef.current.kill();
   }, { scope: textRef });
 
   return [textRef, start];
 };
+
 
 export default useTypeDelete;

@@ -1,7 +1,7 @@
 const Spacer = () => {
   return (
-    <div className="h-[50vh]">
-        <p className="">SPACER</p>
+    <div className="h-[50vh] bg-indigo-950/50">
+        
     </div>
   )
 }

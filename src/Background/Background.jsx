@@ -1,27 +1,24 @@
 import { useEffect, useRef } from "react";
 import "./background.css";
+
 const Background = () => {
   const interactiveRef = useRef(null);
+  const animationFrameRef = useRef(null);
 
   useEffect(() => {
     if (!interactiveRef.current) return;
 
     const interBubble = interactiveRef.current;
-    let curX = 0;
-    let curY = 0;
-    let tgX = 0;
-    let tgY = 0;
-    let animationFrameId;
+    let curX = 0, curY = 0, tgX = 0, tgY = 0;
 
     const move = () => {
-      curX += (tgX - curX) / 20;
+      curX += (tgX - curX) / 20; // smoothing factor
       curY += (tgY - curY) / 20;
 
-      interBubble.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
+      // translate3d = wymuszenie renderowania na GPU
+      interBubble.style.transform = `translate3d(${Math.round(curX)}px, ${Math.round(curY)}px, 0)`;
 
-      animationFrameId = requestAnimationFrame(move);
+      animationFrameRef.current = requestAnimationFrame(move);
     };
 
     const onMouseMove = (event) => {
@@ -29,29 +26,28 @@ const Background = () => {
       tgY = event.clientY;
     };
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     move();
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
+
   return (
     <div className="gradient-bg">
       <svg xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="goo">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              values="1 0 0 0 0  
+                      0 1 0 0 0  
+                      0 0 1 0 0  
+                      0 0 0 18 -8"
               result="goo"
             />
             <feBlend in="SourceGraphic" in2="goo" />
