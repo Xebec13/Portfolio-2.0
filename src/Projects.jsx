@@ -113,7 +113,7 @@ function AccordionItem({ name, date, icons, review, isExpanded, onToggle }) {
       >
         <p className="justify-self-start">{name}</p>
 
-        <div className="flex space-x-2 items-center justify-self-start">
+        <div className="flex space-x-2 items-center justify-self-start text-xl">
           {icons.map((iconName) => (
             <div className="flex items-center" key={iconName}>
               {iconsMap[iconName]}
