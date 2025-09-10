@@ -91,7 +91,7 @@ const LandingPage = () => {
       id="home"
       className="h-[200dvh] p-4 md:p-8  mt-5 relative"
     >
-      <div className="sticky top-1/5 md:top-1/3 text-rose-100 grid md:grid-cols-2 gap-5">
+      <div className="sticky top-1/5 md:top-1/3 text-rose-100 grid md:grid-cols-2 gap-10">
 
       
       {/* Text column */}
