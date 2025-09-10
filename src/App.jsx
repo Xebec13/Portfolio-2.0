@@ -1,23 +1,18 @@
-import Background from "./Background/Background"
-import Nav from "./Nav";
-import LandingPage from "./LandingPage";
-import Projects from "./Projects";
-
-import Contact from "./Contact"
-import Spacer from "./Spacer"
+import { LandingPage, Nav, Projects, Spacer,Contact } from "./components";
+import Background from "./styles/Background/Background";
 
 
 function App() {
   return (
     <>
-    <Background/>
+      <Background />
       <Nav />
       <main>
         <LandingPage />
-        <Spacer/>
+        <Spacer />
         <Projects />
-        <Spacer/>
-        <Contact/>
+        <Spacer />
+        <Contact />
       </main>
     </>
   );

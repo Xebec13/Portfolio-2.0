@@ -1,48 +1,77 @@
 @import url(https://fonts.googleapis.com/css?family=Sansation:300,300italic,regular,italic,700,700italic);
 @import "tailwindcss";
 
+/* === Root color variables (dark + magenta palette) === */
 :root {
-  --ultra-violet: rgb(76, 67, 130);
-  --pomp-and-power: rgb(146, 110, 165);
-  --mimi-pink: rgb(252, 211, 222);
-  --amaranth-pink: rgb(227, 162, 196);
-  --sky-magenta: rgb(201, 112, 170);
+  --prussian-blue: #003049;          /* dark base */
+  --air-superiority-blue: #669bbc;   /* gradient secondary */
+  --sky-magenta: #bc69aa;            /* main accent */
+  --pomp-and-power: #926ea5;         /* purple accent */
+  --ultra-violet: #5e5499;           /* violet accent */
+  --papaya-whip: #fdf0d5;            /* light highlight */
+  --slate-gray:#a8b2c1;
 }
 
+/* === Base styles === */
 body {
-  font-family: "Sansation", sans-serif;
+  font-family: sans-serif;
+  background-color: var(--prussian-blue);
+  color: var(--papaya-whip);
 }
 
-img {
-  border: 1px solid var(--mimi-pink);
-  box-shadow: 0 0 25px var(--mimi-pink);
-  background-color: rgba(252, 211, 222, 0.4);
-}
-.mimi-pink-text {
-  color: #fcd3de;
-}
+/* img {
+  border: 1px solid var(--sky-magenta);
+  box-shadow: 0 0 25px var(--sky-magenta);
+  background-color: rgba(188, 105, 170, 0.2);
+} */
 
-.ultra-violet {
-  background-color: rgba(76, 67, 130, 1);
-}
+/* === Utility classes (Tailwind custom layer) === */
+@layer utilities {
+  /* Text color accents */
+  .text-prussian {
+    color: var(--prussian-blue);
+  }
+  .text-air-superiority {
+    color: var(--air-superiority-blue);
+  }
+  .text-sky-magenta {
+    color: var(--sky-magenta);
+  }
+  .text-pomp-power {
+    color: var(--pomp-and-power);
+  }
+  .text-ultra-violet {
+    color: var(--ultra-violet);
+  }
+  .text-papaya {
+    color: var(--papaya-whip);
+  }
 
-.pomp-and-power {
-  background-color: rgba(146, 110, 165, 1);
-}
-.pomp-and-power-50 {
-  background-color: rgba(146, 110, 165, 0.5);
-}
-.pomp-and-power-40 {
-  background-color: rgba(146, 110, 165, 0.35);
-}
-.mimi-pink {
-  background-color: rgba(252, 211, 222, 1);
-}
+  /* Background color accents */
+  .bg-prussian {
+    background-color: var(--prussian-blue);
+  }
+  .bg-air-superiority {
+    background-color: var(--air-superiority-blue);
+  }
+  .bg-sky-magenta {
+    background-color: var(--sky-magenta);
+  }
+  .bg-pomp-power {
+    background-color: var(--pomp-and-power);
+  }
+  .bg-ultra-violet {
+    background-color: var(--ultra-violet);
+  }
+  .bg-papaya {
+    background-color: var(--papaya-whip);
+  }
 
-.amaranth-pink {
-  background-color: rgba(227, 162, 196, 1);
-}
-
-.sky-magenta {
-  background-color: rgba(201, 112, 170, 1);
+  /* Highlight accents (for CTA, hover, links) */
+  .highlight-magenta {
+    color: var(--sky-magenta);
+  }
+  .highlight-papaya {
+    color: var(--papaya-whip);
+  }
 }
