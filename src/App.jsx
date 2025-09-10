@@ -1,5 +1,5 @@
 import { LandingPage, Nav, Projects, Spacer,Contact } from "./components";
-import Background from "./styles/Background/Background";
+import Background from "./styles/background/Background";
 
 
 function App() {

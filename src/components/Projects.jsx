@@ -2,14 +2,14 @@ import { useState, useRef } from "react";
 import { MdHtml, MdJavascript, MdCss } from "react-icons/md";
 import { FaReact, FaSass } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
-
+import { IoChevronDown } from "react-icons/io5"; // arrow icon
 
 const iconsMap = {
   react: <FaReact />,
   tailwind: <RiTailwindCssFill />,
   javascript: <MdJavascript />,
   gsap: (
-    <span className="text-[0.5rem] font-bold uppercase align-middle">
+    <span className="text-[0.3rem] font-bold uppercase align-middle">
       GSAP.js
     </span>
   ),
@@ -22,98 +22,98 @@ const iconsMap = {
 const projectInfo = [
   {
     id: 1,
-    name: "Cartoon Podcast",
-    date: "08.2025",
-    icons: ["react", "tailwind", "javascript", "gsap"],
-    review:
-      "Cartoon Podcast offers a vibrant platform for podcasters discussing classic and modern cartoons, delivering an engaging and immersive user experience that connects with diverse audiences.",
-  },
-  {
-    id: 2,
-    name: "Mind The Game",
-    date: "06.2025",
-    icons: ["react", "tailwind", "javascript", "gsap"],
-    review:
-      "Mind The Game is a sleek podcast site for former basketball players, featuring smooth content delivery and an appealing interface tailored to sports enthusiasts.",
-  },
-  {
-    id: 3,
-    name: "Car Rental",
-    date: "06.2025",
-    icons: ["next", "tailwind", "javascript", "gsap"],
-    review:
-      "Car Rental simplifies the online booking process with a user-focused design that ensures seamless navigation and efficient reservation workflows.",
-  },
-  {
-    id: 4,
-    name: "Reven Restaurant",
-    date: "02.2025",
-    icons: ["react", "tailwind", "javascript", "gsap"],
-    review:
-      "Reven Restaurant presents a visually striking fusion sushi experience with a unique style that captivates trend-conscious visitors seeking innovative dining.",
-  },
-  {
-    id: 5,
-    name: "Cozy Leaf Restaurant",
-    date: "09.2025",
-    icons: ["react", "sass", "javascript"],
-    review:
-      "Cozy Leaf Restaurant creates an inviting, cozy atmosphere that resonates with upscale vegetarian guests, balancing aesthetic appeal with user-friendly navigation.",
-  },
-  {
-    id: 6,
-    name: "Gericht Restaurant Landing Page",
-    date: "04.2024",
-    icons: ["react", "css", "javascript"],
-    review:
-      "A clean and professional landing page delivering essential restaurant information, reflecting solid foundational skills in web layout and user experience.",
-  },
-  {
-    id: 7,
-    name: "Chat-GPT3 Landing Page",
-    date: "04.2024",
-    icons: ["react", "css", "javascript"],
-    review:
-      "A functional and straightforward landing page that effectively presents AI product features with clarity and simplicity.",
-  },
-  {
-    id: 8,
-    name: "Hoo Bank Landing Page",
-    date: "04.2024",
-    icons: ["react", "css", "javascript"],
-    review:
-      "A polished and accessible interface designed for fintech, focused on usability and performance to build user trust.",
-  },
-  {
-    id: 9,
-    name: "Afal-Logistics",
-    date: "02.2024",
-    icons: ["html", "css", "javascript"],
-    review:
-      "A clear, service-oriented landing page created for a local logistics firm, translating client needs into an effective digital presence.",
-  },
-  {
-    id: 10,
     name: "PCK",
-    date: "12.2023",
+    date: "2023",
     icons: ["html", "css", "javascript"],
     review:
       "A practical site facilitating clothing donations, emphasizing usability and ease of access for social good.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-yellow-200",
+    href: "https://pck-fundation.netlify.app",
+  },
+  {
+    id: 2,
+    name: "Afal-Logistics",
+    date: "2024",
+    icons: ["html", "css", "javascript"],
+    review:
+      "A clear, service-oriented landing page created for a local logistics firm, translating client needs into an effective digital presence.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-blue-200",
+    href: "https://afal-logistics.netlify.app",
+  },
+  {
+    id: 3,
+    name: "Chat-GPT3 Landing Page",
+    date: "2024",
+    icons: ["react", "css", "javascript"],
+    review:
+      "A functional and straightforward landing page that effectively presents AI product features with clarity and simplicity.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-violet-200",
+    href: "https://what-chat-gpt3.netlify.app",
+  },
+  {
+    id: 4,
+    name: "Gericht Restaurant",
+    date: "2024",
+    icons: ["react", "css", "javascript"],
+    review:
+      "A clean and professional landing page delivering essential restaurant information, reflecting solid foundational skills in web layout and user experience.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-green-200",
+    href: "https://grestaurant-landing-page.netlify.app",
+  },
+  {
+    id: 5,
+    name: "Cozy Leaf",
+    date: "2025",
+    icons: ["react", "tailwind", "javascript", "gsap"],
+    review:
+      "Cozy Leaf Restaurant creates an inviting, cozy atmosphere that resonates with upscale vegetarian guests, balancing aesthetic appeal with user-friendly navigation.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-yellow-200",
+    href: "https://cl-restaurant.netlify.app",
+  },
+  {
+    id: 6,
+    name: "Post Prime",
+    date: "2025",
+    icons: ["react", "sass", "javascript", "gsap"],
+    review:
+      "Post Prime is a sleek podcast site for former basketball players, featuring smooth content delivery and an appealing interface tailored to sports enthusiasts.",
+    images: ["img1.png", "img2.png", "img3.png"],
+    bgColor: "bg-cyan-200",
+    href: "#",
   },
 ];
 
-function AccordionItem({ name, date, icons, review, isExpanded, onToggle }) {
+function ProjectItem({
+  name,
+  date,
+  icons,
+  review,
+  images,
+  bgColor,
+  href,
+  isExpanded,
+  onToggle,
+}) {
   const contentRef = useRef(null);
 
   return (
-    <div className="border-b border-pink-200 mimi-pink-text">
-      <div
-        className={`hoverProject pomp-and-power-50 grid grid-cols-3 gap-3 items-center p-3 cursor-pointer`}
+    <div className="border-b border-rose-200 text-rose-100">
+      {/* Header row */}
+      <button
+        className="grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer hover:bg-rose-100/10 transition-colors"
         onClick={onToggle}
+        aria-expanded={isExpanded}
       >
-        <p className="justify-self-start">{name}</p>
+        {/* Project name */}
+        <h3 className="text-xs md:text-lg">{name}</h3>
 
-        <div className="flex space-x-2 items-center justify-self-start text-xl">
+        {/* Tech icons */}
+        <div className="flex flex-wrap space-x-2 items-center gap-1 text-xs md:text-xl">
           {icons.map((iconName) => (
             <div className="flex items-center" key={iconName}>
               {iconsMap[iconName]}
@@ -121,13 +121,21 @@ function AccordionItem({ name, date, icons, review, isExpanded, onToggle }) {
           ))}
         </div>
 
-        <p className="justify-self-end">{date}</p>
-      </div>
+        {/* Date + arrow */}
+        <div className="flex items-center justify-end space-x-2">
+          <span className="text-xs md:text-lg">{date}</span>
+          <IoChevronDown
+            className={`transition-transform duration-300 ${
+              isExpanded ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        </div>
+      </button>
 
-      {/* Expanded poza gridem – bez zmian */}
+      {/* Expanded content */}
       <div
         ref={contentRef}
-        className="overflow-hidden transition-all"
+        className={`overflow-hidden transition-all ${bgColor} text-black`}
         style={{
           height: isExpanded ? contentRef.current?.scrollHeight + "px" : "0px",
           opacity: isExpanded ? 1 : 0,
@@ -135,20 +143,37 @@ function AccordionItem({ name, date, icons, review, isExpanded, onToggle }) {
             "height 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s ease",
         }}
       >
-        <div className="p-3 pomp-and-power-40 grid grid-cols-2 rounded-b-lg">
-          <div className="review-info">
-            <p className="">{review}</p>
+        <div className="p-4 bg-rose-100/10 rounded-b-lg space-y-4">
+          {/* Review text */}
+          <p className="text-sm">{review}</p>
+
+          {/* Images row */}
+          <div className="grid grid-cols-3 gap-2">
+            {images.map((img, idx) => (
+              <div
+                key={idx}
+                className={`w-full h-24 rounded-md flex items-center justify-center text-xs text-gray-700 border-2`}
+              >
+                {img}
+              </div>
+            ))}
           </div>
-          <div className="">
-            <div className="size-75 bg-pink-600"></div>
-            <div className="size-55 bg-pink-800"></div>
-            <div className="size-55 bg-pink-700"></div>
-          </div>
+
+          {/* Live demo link */}
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 px-4 py-2 text-sm font-semibold text-white bg-rose-500 rounded hover:bg-rose-600 transition-colors"
+          >
+            Live Demo
+          </a>
         </div>
       </div>
     </div>
   );
 }
+
 const Projects = () => {
   const [expandedId, setExpandedId] = useState(null);
   const toggleExpand = (id) => {
@@ -156,24 +181,26 @@ const Projects = () => {
   };
 
   return (
-    <section className="min-h-screen p-5 mimi-pink-text">
-      {/* Nagłówki kolumn */}
-      <div className="grid grid-cols-3 p-2 gap-3 font-semibold border-b-2 border-pink-200 uppercase">
-        <p className="justify-self-start">Projects</p>
-        <p className="justify-self-start">Tech</p>
-        <p className="justify-self-end">Date</p>
+    <section className="h-screen p-4 md:p-8 text-rose-100">
+      {/* Table header */}
+      <div className="grid grid-cols-3 p-2 gap-3 font-semibold border-b-2 border-purple-400 uppercase text-xs md:text-xl">
+        <span className="justify-self-start">Projects</span>
+        <span className="justify-self-start">Tech</span>
+        <span className="justify-self-end">Date</span>
       </div>
 
-      {/* Lista projektów */}
-      <div className="flex flex-col justify-center">
-        {projectInfo.map((item) => (
-          <AccordionItem
-            key={item.id}
-            {...item}
-            isExpanded={expandedId === item.id}
-            onToggle={() => toggleExpand(item.id)}
-          />
-        ))}
+      {/* Project list */}
+      <div className="flex flex-col">
+        {[...projectInfo] // kopiujemy tablicę, żeby nie mutować oryginału
+          .sort((a, b) => b.id - a.id) // malejąco po id
+          .map((item) => (
+            <ProjectItem
+              key={item.id}
+              {...item}
+              isExpanded={expandedId === item.id}
+              onToggle={() => toggleExpand(item.id)}
+            />
+          ))}
       </div>
     </section>
   );

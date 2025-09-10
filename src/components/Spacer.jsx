@@ -1,6 +1,6 @@
 const Spacer = () => {
   return (
-    <div className="h-[25vh]">
+    <div className="h-[25vh] md:h-[50vh]">
         
     </div>
   )
