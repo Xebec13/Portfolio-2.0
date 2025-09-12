@@ -1,6 +1,5 @@
-import { LandingPage, Nav, Projects, Spacer,Contact } from "./components";
+import { LandingPage, Nav, Projects, Contact } from "./components";
 import Background from "./styles/background/Background";
-
 
 function App() {
   return (
@@ -9,9 +8,7 @@ function App() {
       <Nav />
       <main>
         <LandingPage />
-        <Spacer />
         <Projects />
-        <Spacer />
         <Contact />
       </main>
     </>

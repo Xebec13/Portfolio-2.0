@@ -25,6 +25,7 @@ import {
 } from "../assets";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 // Mapping of icons for project tech stack
 const iconsMap = {
   react: <FaReact />,
@@ -41,6 +42,7 @@ const iconsMap = {
   next: <RiNextjsFill />,
 };
 
+// Project data
 const projectInfo = [
   {
     id: 1,
@@ -48,14 +50,14 @@ const projectInfo = [
     date: "2023",
     icons: ["html", "css", "javascript"],
     review:
-      "Practical site facilitating clothing donations, emphasizing usability and ease of access for social good.",
+      "Landing page for a donation platform with smooth GSAP animations and a step-by-step donation flow.",
     images: [pck1, pck2, pck3],
     bgColor: "bg-yellow-300/60",
     bgColor2: "bg-black",
     textColor: "text-black",
     textColor2: "text-white",
     href: "https://pck-fundation.netlify.app",
-    gitHref: "https://github.com/TwojNick/pck", // ⬅️ GitHub link
+    gitHref: "https://github.com/TwojNick/pck",
   },
   {
     id: 2,
@@ -135,7 +137,7 @@ const projectInfo = [
 ];
 
 // Single project item (accordion)
-function ProjectItem({
+const ProjectItem = ({
   name,
   date,
   icons,
@@ -149,21 +151,21 @@ function ProjectItem({
   gitHref,
   isExpanded,
   onToggle,
-}) {
+}) => {
   const contentRef = useRef(null);
 
   return (
-    <div className="border-b border-rose-200">
+    <div>
       {/* Header row */}
       <button
-        className="grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer hover:bg-rose-100/10 transition-colors"
+        className="reveal grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer hover:bg-rose-100/10 transition-colors"
         onClick={onToggle}
         aria-expanded={isExpanded}
       >
         <h3 className="text-sm md:text-lg">{name}</h3>
 
         {/* Tech icons */}
-        <div className="flex flex-wrap items-center align-top gap-2 text-lg md:text-xl">
+        <div className="flex flex-wrap items-center gap-2 text-lg md:text-xl">
           {icons.map((iconName) => (
             <span key={iconName}>{iconsMap[iconName]}</span>
           ))}
@@ -180,6 +182,9 @@ function ProjectItem({
         </div>
       </button>
 
+      {/* Divider under header */}
+      <div className="h-0.5 bg-pink-300/80 divider"></div>
+
       {/* Expanded content */}
       <div
         ref={contentRef}
@@ -192,9 +197,10 @@ function ProjectItem({
         <div
           className={`overflow-y-auto p-6 rounded-b-lg space-y-4 ${textColor}`}
         >
+          {/* Project description */}
           <p className="text-sm">{review}</p>
 
-          {/* Images row */}
+          {/* Project images */}
           <div className="grid md:grid-cols-3 gap-2">
             {images.map((img, idx) => (
               <img
@@ -207,7 +213,7 @@ function ProjectItem({
             ))}
           </div>
 
-          {/* Live demo link */}
+          {/* Links */}
           <div className="flex gap-2">
             <a
               href={href}
@@ -230,26 +236,57 @@ function ProjectItem({
       </div>
     </div>
   );
-}
+};
 
 // Projects section
 const Projects = () => {
   const [expandedId, setExpandedId] = useState(null);
   const toggleExpand = (id) => setExpandedId(expandedId === id ? null : id);
-  
+
+  useGSAP(() => {
+    // Animate project headers
+    gsap.from(".reveal", {
+      x: -50,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".reveal",
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // Animate dividers
+    gsap.from(".divider", {
+      scaleX: 0,
+      transformOrigin: "left center",
+      duration: 2.5,
+      ease: "power3.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".divider",
+        start: "top 100%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
-    <section className="min-h-screen p-4 md:p-8 text-rose-100 reveal">
-      {/* Header row */}
-      <div className=" project-border grid grid-cols-3 p-2 gap-3 font-semibold border-b-2 border-purple-400 uppercase text-xs md:text-xl">
+    <section className="min-h-screen p-4 md:p-8 text-rose-100">
+      {/* Section header */}
+      <div className="grid grid-cols-3 p-2 gap-3 font-semibold uppercase text-xs md:text-xl reveal">
         <span className="justify-self-start">Projects</span>
         <span className="justify-self-start">Tech</span>
         <span className="justify-self-end">Date</span>
       </div>
+      <div className="h-1 bg-pink-500 divider"></div>
 
-      {/* Project list */}
+      {/* Projects list */}
       <div className="flex flex-col">
         {[...projectInfo]
-          .sort((a, b) => b.id - a.id)
+          .sort((a, b) => b.id - a.id) // sort by newest first
           .map((item) => (
             <ProjectItem
               key={item.id}
