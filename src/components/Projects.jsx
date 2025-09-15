@@ -48,7 +48,7 @@ const projectInfo = [
     id: 1,
     name: "PCK",
     date: "2023",
-    icons: ["html", "css", "javascript"],
+    icons: ["html", "css", "javascript","gsap"],
     review:
       "Landing page for a donation platform with smooth GSAP animations and a step-by-step donation flow.",
     images: [pck1, pck2, pck3],
@@ -57,52 +57,52 @@ const projectInfo = [
     textColor: "text-black",
     textColor2: "text-white",
     href: "https://pck-fundation.netlify.app",
-    gitHref: "https://github.com/TwojNick/pck",
+    gitHref: "https://github.com/Xebec13/PCK-Zbiorka",
   },
   {
     id: 2,
     name: "Afal-Logistics",
     date: "2024",
-    icons: ["html", "css", "javascript"],
+    icons: ["html", "css", "javascript","gsap"],
     review:
-      "Clear, service-oriented landing page created for a local logistics firm, translating client needs into an effective digital presence.",
+      "Single page MVP application prepared for a local logistics company, aimed at building brand recognition for potential customers.",
     images: [afal1, afal2, afal3],
     bgColor: "bg-black/50",
     bgColor2: "bg-red-400/80",
     textColor: "text-white",
     textColor2: "text-black",
     href: "https://afal-logistics.netlify.app",
-    gitHref: "https://github.com/TwojNick/afal-logistics",
+    gitHref: "https://github.com/Xebec13/Afal-Logistics",
   },
   {
     id: 3,
     name: "Chat-GPT3 Landing Page",
     date: "2024",
-    icons: ["react", "css", "javascript"],
+    icons: ["react", "css", "javascript","gsap"],
     review:
-      "Functional and straightforward landing page that effectively presents AI product features with clarity and simplicity.",
+      "Simple and clear landing page showcasing AI product features with responsive layout.",
     images: [gpt1, gpt2, gpt3],
     bgColor: "bg-indigo-400/20",
     bgColor2: "bg-sky-400/80",
     textColor: "text-white",
     textColor2: "text-black",
     href: "https://what-chat-gpt3.netlify.app",
-    gitHref: "https://github.com/TwojNick/chat-gpt3-landing",
+    gitHref: "https://github.com/Xebec13/Chat-GPT3",
   },
   {
     id: 4,
     name: "Gericht Restaurant",
     date: "2024",
-    icons: ["react", "css", "javascript"],
+    icons: ["react", "css", "javascript","gsap"],
     review:
-      "Clean and professional landing page delivering essential restaurant information, reflecting solid foundational skills in web layout and user experience.",
+      "Landing page for a modern restaurant brand, later improved with GSAP animations for interactivity.",
     images: [g1, g2, g3],
     bgColor: "bg-amber-300/40",
     bgColor2: "bg-black/80",
     textColor: "text-black",
     textColor2: "text-amber-300",
     href: "https://grestaurant-landing-page.netlify.app",
-    gitHref: "https://github.com/TwojNick/gericht-restaurant",
+    gitHref: "https://github.com/Xebec13/Gericht-Restaurant",
   },
   {
     id: 5,
@@ -110,30 +110,30 @@ const projectInfo = [
     date: "2025",
     icons: ["react", "tailwind", "javascript", "gsap"],
     review:
-      "Cozy Leaf Restaurant creates an inviting, cozy atmosphere that resonates with upscale vegetarian guests, balancing aesthetic appeal with user-friendly navigation.",
+      "Modern restaurant website with responsive design, smooth GSAP animations, and SEO optimization.",
     images: [cl1, cl2, cl3],
     bgColor: "bg-pink-500/40",
     bgColor2: "bg-green-500/80",
     textColor: "text-violet-100",
     textColor2: "text-fuchsia-100",
     href: "https://cl-restaurant.netlify.app",
-    gitHref: "https://github.com/TwojNick/cozy-leaf",
+    gitHref: "https://github.com/Xebec13/Cozy-Leaf",
   },
-  {
-    id: 6,
-    name: "Post Prime",
-    date: "2025",
-    icons: ["react", "sass", "javascript", "gsap"],
-    review:
-      "Post Prime is a sleek podcast site for former basketball players, featuring smooth content delivery and an appealing interface tailored to sports enthusiasts.",
-    images: [cl1, cl1, cl1], // ⚠️ placeholders
-    bgColor: "bg-gray-300/40",
-    bgColor2: "bg-cyan-300",
-    textColor: "text-black",
-    textColor2: "text-cyan-900",
-    href: "#",
-    gitHref: "https://github.com/TwojNick/post-prime",
-  },
+  // {
+  //   id: 6,
+  //   name: "Post Prime",
+  //   date: "2025",
+  //   icons: ["react", "sass", "javascript", "gsap"],
+  //   review:
+  //     "Post Prime is a sleek podcast site for former basketball players, featuring smooth content delivery and an appealing interface tailored to sports enthusiasts.",
+  //   images: [cl1, cl1, cl1], // ⚠️ placeholders
+  //   bgColor: "bg-gray-300/40",
+  //   bgColor2: "bg-cyan-300",
+  //   textColor: "text-black",
+  //   textColor2: "text-cyan-900",
+  //   href: "#",
+  //   gitHref: "https://github.com/TwojNick/post-prime",
+  // },
 ];
 
 // Single project item (accordion)
@@ -158,7 +158,7 @@ const ProjectItem = ({
     <div>
       {/* Header row */}
       <button
-        className="reveal grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer hover:bg-rose-100/10 transition-colors"
+        className="reveal grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer hover:bg-rose-100/20 transition-colors duration-300"
         onClick={onToggle}
         aria-expanded={isExpanded}
       >
