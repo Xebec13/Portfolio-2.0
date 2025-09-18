@@ -126,7 +126,7 @@ const LandingPage = () => {
         {/* Image column */}
         <div
           ref={boxRef}
-          className="relative w-68 h-68  md:w-86 md:h-86 mx-auto rounded-full  shadow-violet-500/50 shadow-sm bg-rose-100/10 overflow-hidden cursor-pointer"
+          className="relative w-68 h-68  md:w-86 md:h-86 mx-auto rounded-full drop-shadow-violet-600 shadow-sm bg-rose-100/10 overflow-hidden cursor-pointer"
         >
           {/* Anime image */}
           <div
@@ -135,7 +135,7 @@ const LandingPage = () => {
               backgroundImage: `url(${Info.photo1})`,
               backgroundPosition: "center 20%", // X=center, Y=20%
             }}
-            className="absolute inset-0 rounded-full will-change-[opacity] bg-cover"
+            className="absolute inset-0 rounded-full will-change-[opacity] bg-cover drop-shadow-indigo-500/50"
           />
 
           {/* Real image */}
@@ -145,7 +145,7 @@ const LandingPage = () => {
               backgroundImage: `url(${Info.photo2})`,
               backgroundPosition: "center 10%", // X=center, Y=10%
             }}
-            className="absolute inset-0 rounded-full will-change-[opacity] bg-cover"
+            className="absolute inset-0 rounded-full will-change-[opacity] bg-cover drop-shadow-indigo-500/50"
           />
         </div>
       </div>
