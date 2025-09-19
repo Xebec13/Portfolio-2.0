@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <section 
     id="projects"
-    className="min-h-screen p-4 md:p-8 text-rose-100 scroll-mt-50">
+    className="min-h-screen md:h-screen p-4 md:p-8 text-rose-100 scroll-mt-50">
       {/* Section header */}
       <div className="grid grid-cols-3 p-2 gap-3 font-semibold uppercase text-sm md:text-xl reveal">
         <span className="justify-self-start">Projects</span>

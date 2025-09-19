@@ -66,7 +66,7 @@ const Contact = () => {
           >
             {/* Icon */}
             <span
-              className={`text-4xl ${social.color} group-hover:text-white transition-colors`}
+              className={`text-3xl md:text-4xl ${social.color} group-hover:text-white transition-colors`}
             >
               {social.icon}
             </span>

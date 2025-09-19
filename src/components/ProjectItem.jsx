@@ -90,7 +90,7 @@ const ProjectItem = ({
           className={`overflow-y-auto p-6 rounded-b-lg space-y-4 ${textColor}`}
         >
           {/* Project description */}
-          <p className={`text-sm ${fadeInClass(isExpanded)}`}>{review}</p>
+          <p className={`p-1 md:w-3/4 text-sm ${fadeInClass(isExpanded)}`}>{review}</p>
 
           {/* Project images */}
           <div className="grid md:grid-cols-3 gap-2">
@@ -133,7 +133,7 @@ const ProjectItem = ({
             </div>
 
             {/* Tech stack tags (aligned to the right) */}
-            <div className="md:self-end md:justify-self-end self-center justify-self-center gap-2 flex items-center justify-center">
+            <div className="md:self-end md:justify-self-end self-center justify-self-start gap-2 flex items-center justify-center">
               {icons.map((tech) => (
                 <div
                   key={tech}

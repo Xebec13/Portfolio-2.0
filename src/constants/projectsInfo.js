@@ -1,12 +1,11 @@
-
 export const projectInfo = [
     {
         id: 1,
         name: "PCK",
         date: "2023",
-        icons: ["html", "css", "javascript", "gsap"],
+        icons: ["html", "tailwind", "javascript", "gsap"],
         review:
-            "Landing page for a donation platform with smooth GSAP animations and a step-by-step donation flow.",
+            "Fully responsive landing page for a charity donation platform. Built with Tailwind for layout and styling, enhanced with GSAP animations for smooth interactivity. JavaScript handled UI logic and transitions, making it lightweight and clean.",
         images: "pck",
         bgColor: "bg-yellow-300/60",
         bgColor2: "bg-black",
@@ -19,9 +18,9 @@ export const projectInfo = [
         id: 2,
         name: "Afal-Logistics",
         date: "2024",
-        icons: ["html", "css", "javascript", "gsap"],
+        icons: ["html", "tailwind", "javascript", "gsap"],
         review:
-            "Single page MVP application prepared for a local logistics company, aimed at building brand recognition for potential customers.",
+            "Responsive landing page built for a local logistics company to showcase services and build online presence. Developed with Tailwind CSS for a clean layout and GSAP for engaging animations. Fast, lightweight, and fully responsive across devices.",
         images: "afal",
         bgColor: "bg-black/50",
         bgColor2: "bg-red-400/80",
@@ -36,7 +35,7 @@ export const projectInfo = [
         date: "2024",
         icons: ["react", "css", "javascript", "gsap"],
         review:
-            "Simple and clear landing page showcasing AI product features with responsive layout.",
+            "Modern React landing page inspired by a popular AI product layout, but reimagined with custom GSAP animations to stand out from similar clones. Built with pure CSS for styling and fully responsive design across all screen sizes.",
         images: "chatgpt",
         bgColor: "bg-indigo-400/20",
         bgColor2: "bg-sky-400/80",
@@ -51,7 +50,7 @@ export const projectInfo = [
         date: "2024",
         icons: ["react", "css", "javascript", "gsap"],
         review:
-            "Landing page for a modern restaurant brand, later improved with GSAP animations for interactivity.",
+            "High-end React restaurant landing page combining sleek design with animated GSAP-driven interactivity. Styled with pure CSS and fully responsive, offering a polished and engaging user experience.",
         images: "gericht",
         bgColor: "bg-amber-300/40",
         bgColor2: "bg-black/80",
@@ -66,7 +65,7 @@ export const projectInfo = [
         date: "2025",
         icons: ["react", "tailwind", "javascript", "gsap"],
         review:
-            "Modern restaurant website with responsive design, smooth GSAP animations, and SEO optimization.",
+            "Modern restaurant website built with React, TailwindCSS, and GSAP. Features include smooth animations, a fully responsive design, a validated reservation form, and an order cart powered by local storage. Crafted end-to-end with SEO and custom visuals. This flagship project showcases advanced GSAP animations and complete UI/UX flow, from design to functionality.",
         images: "cozy",
         bgColor: "bg-pink-500/40",
         bgColor2: "bg-green-500/80",
