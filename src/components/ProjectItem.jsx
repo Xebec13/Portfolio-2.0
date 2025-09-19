@@ -32,8 +32,8 @@ const ProjectItem = ({
       <button
         onClick={onToggle}
         aria-expanded={isExpanded}
-        className={`relative reveal grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer transition-colors duration-700
-          ${isExpanded ? bgColor : "hover:bg-rose-100/20"}`}
+        className={`relative reveal grid grid-cols-3 gap-3 items-center p-3 w-full text-left cursor-pointer transition-colors duration-700 hover:bg-rose-100/20
+          ${isExpanded ? bgColor : ""}`}
       >
         {/* Project title */}
         <h3
@@ -90,7 +90,9 @@ const ProjectItem = ({
           className={`overflow-y-auto p-6 rounded-b-lg space-y-4 ${textColor}`}
         >
           {/* Project description */}
-          <p className={`p-1 md:w-3/4 text-sm ${fadeInClass(isExpanded)}`}>{review}</p>
+          <p className={`p-1 md:w-3/4 text-sm ${fadeInClass(isExpanded)}`}>
+            {review}
+          </p>
 
           {/* Project images */}
           <div className="grid md:grid-cols-3 gap-2">

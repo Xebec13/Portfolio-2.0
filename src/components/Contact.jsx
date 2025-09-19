@@ -7,38 +7,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   useGSAP(() => {
-    // Animate socials (fade + slide-up, one-time only)
+    // Animate slogan first (simple reveal from top)
+    gsap.from(".contact-slogan", {
+      y: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".contact-slogan",
+        start: "top 85%",
+        toggleActions: "play none none none", // one-time reveal
+      },
+    });
+
+    // Animate socials after slogan (staggered)
     gsap.from(".contact-social", {
       y: 30,
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
-      delay: 0.2, // subtle delay for nicer timing
-      stagger: 0.2, // each icon comes one after another
+      delay: 0.2, // small offset so slogan leads
+      stagger: 0.2,
       scrollTrigger: {
-        trigger: "section#contact", // container
-        start: "top 85%",            // reveal when section comes into view
-        toggleActions: "play none none none", // only play once
+        trigger: ".contact-social",
+        start: "top 85%",
+        toggleActions: "play none none none",
       },
     });
-
-    // Animate slogan (scroll scrub effect)
-    gsap.fromTo(
-      ".contact-slogan",
-      { y: -30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "section#contact",
-          start: "top 80%",
-          end: "+=100",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      }
-    );
   }, []);
 
   return (
