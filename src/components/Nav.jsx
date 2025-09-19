@@ -1,8 +1,8 @@
 const Nav = () => {
   // Navigation items stored in an array for cleaner and scalable code
   const NavItems = [
+    { label: "Home", href: "#home" },
     { label: "Projects", href: "#projects" },
-    { label: "About Me", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
 

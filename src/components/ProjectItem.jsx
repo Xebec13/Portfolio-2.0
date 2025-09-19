@@ -108,17 +108,17 @@ const ProjectItem = ({
 
           {/* Links + Tech stack row */}
           <div
-            className={`flex items-center gap-2 mt-2 ${fadeInClass(
+            className={`grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 ${fadeInClass(
               isExpanded
             )}`}
           >
             {/* Action links */}
-            <div className="flex items-center gap-2 mr-auto">
+            <div className="flex gap-1 md:mr-auto">
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-block p-2 text-xs md:text-sm font-semibold ${bgColor2} ${textColor2} rounded duration-500 hover:bg-gray-100 hover:text-black/80 transition-colors`}
+                className={`p-2 text-xs md:text-sm font-semibold ${bgColor2} ${textColor2} rounded duration-500 hover:bg-gray-100 hover:text-black/80 transition-colors`}
               >
                 Live Demo
               </a>
@@ -126,29 +126,31 @@ const ProjectItem = ({
                 href={gitHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-block p-2 text-xs md:text-sm font-semibold ${bgColor} ${textColor} rounded duration-500 hover:bg-gray-100 hover:text-black/80 transition-colors`}
+                className={`p-2 text-xs md:text-sm font-semibold ${bgColor} ${textColor} rounded duration-500 hover:bg-gray-100 hover:text-black/80 transition-colors`}
               >
                 GitHub
               </a>
             </div>
 
             {/* Tech stack tags (aligned to the right) */}
-            {icons.map((tech) => (
-              <div
-                key={tech}
-                className={`flex items-center gap-2 p-2 text-xs flex-wrap font-semibold rounded border-1 ${bgColor} ${fadeInClass(
-                  isExpanded
-                )}`}
-              >
-                {tech.toUpperCase()}
-              </div>
-            ))}
+            <div className="md:self-end md:justify-self-end self-center justify-self-center gap-2 flex items-center justify-center">
+              {icons.map((tech) => (
+                <div
+                  key={tech}
+                  className={`p-2 flex items-center justify-center px-2 text-[0.65rem] leading-none font-semibold rounded-full hover:bg-gray-100 hover:text-black/80 transition-colors ${bgColor} ${fadeInClass(
+                    isExpanded
+                  )}`}
+                >
+                  {tech.toUpperCase()}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Divider below each project */}
-      <div className="h-0.5 bg-pink-300/80 divider"></div>
+      <div className="h-0.5 bg-gradient-to-r from-pink-500/80 to-rose-300/80 divider"></div>
     </div>
   );
 };

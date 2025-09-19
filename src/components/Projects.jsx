@@ -40,14 +40,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="min-h-screen p-4 md:p-8 text-rose-100">
+    <section 
+    id="projects"
+    className="min-h-screen p-4 md:p-8 text-rose-100 scroll-mt-50">
       {/* Section header */}
       <div className="grid grid-cols-3 p-2 gap-3 font-semibold uppercase text-sm md:text-xl reveal">
         <span className="justify-self-start">Projects</span>
         <span className="justify-self-start">Tech</span>
         <span className="justify-self-end">Date</span>
       </div>
-      <div className="h-1 bg-pink-500 divider"></div>
+      <div className="h-1 bg-gradient-to-r from-violet-400/80 to-pink-400/80 divider"></div>
 
       {/* Projects list */}
       <div className="flex flex-col">
