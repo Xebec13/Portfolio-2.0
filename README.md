@@ -1,4 +1,4 @@
-# 💼 My Developer Portfolioo
+# 💼 My Developer Portfolio
 
 [![Live](https://img.shields.io/badge/Live-rose?style=for-the-badge&logo=vercel&logoColor=white)](https://twoj-link-do-portfolio.netlify.app)
 
