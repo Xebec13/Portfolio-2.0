@@ -66,4 +66,4 @@ It showcases selected projects with smooth animations, expandable previews, and 
 ## 📬 Contact
 
 - [GitHub](https://github.com/Xebec13)
-- [LinkedIn](https://linkedin.com/in/twojprofil)
+- [LinkedIn](https://www.linkedin.com/in/david-hoesen-054257308/)
