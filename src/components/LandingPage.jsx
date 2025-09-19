@@ -104,7 +104,7 @@ const LandingPage = () => {
       id="home"
       className="h-[200dvh] p-4 md:p-8  mt-5 relative fade-out"
     >
-      <div className="sticky top-1/5 md:top-1/3 text-rose-100 grid md:grid-cols-2 gap-10">
+      <div className="sticky top-1/6 md:top-1/3 text-rose-100 grid md:grid-cols-2 gap-10">
         {/* Text column */}
         <div ref={textRef} className="space-y-3 mx-auto fade-text">
           <h1 className=" text-5xl md:text-6xl font-semibold leading-tight">
