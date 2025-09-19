@@ -1,6 +1,6 @@
 # 💼 My Developer Portfolio
 
-[![Live](https://img.shields.io/badge/Live-rose?style=for-the-badge&logo=vercel&logoColor=white)](https://twoj-link-do-portfolio.netlify.app)
+[![Live](https://img.shields.io/badge/Live-pink?style=for-the-badge&logo=vercel&logoColor=white)](https://twoj-link-do-portfolio.netlify.app)
 
 A minimalist, fully responsive portfolio built with **React**, **Tailwind CSS**, and **GSAP**.  
 It showcases selected projects with smooth animations, expandable previews, and direct links to code and live demos.
