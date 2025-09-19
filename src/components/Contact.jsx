@@ -16,7 +16,7 @@ const Contact = () => {
       delay: 0.2, // subtle delay for nicer timing
       stagger: 0.2, // each icon comes one after another
       scrollTrigger: {
-        trigger: ".contact-socials", // container
+        trigger: "section#contact", // container
         start: "top 85%",            // reveal when section comes into view
         toggleActions: "play none none none", // only play once
       },
@@ -31,10 +31,11 @@ const Contact = () => {
         opacity: 1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".contact-slogan",
+          trigger: "section#contact",
           start: "top 80%",
           end: "+=100",
           scrub: true,
+          invalidateOnRefresh: true,
         },
       }
     );
